@@ -108,7 +108,7 @@ public class PaletteView extends ViewGroup{
         float paletteHeight = (float)getHeight();
         float angle = 2.6f;
 
-        for (int childIndex = 0; childIndex < getChildCount(); childIndex++){
+        for (int childIndex = 0; childIndex < numChildren; childIndex++){
             View child = getChildAt(childIndex);
             float childWidth = 50.0f;
             float childHeight = 50.0f;

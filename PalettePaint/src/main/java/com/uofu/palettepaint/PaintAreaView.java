@@ -33,6 +33,12 @@ public class PaintAreaView extends View implements View.OnTouchListener{
         mCanvas = new Canvas();
     }
 
+    private void clearPaintArea(){
+        paintLines = new ArrayList<PaintLine>();
+        currentLine = new PaintLine(currentLine.getPaint().getColor());
+        invalidate();
+    }
+
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
@@ -96,9 +102,9 @@ public class PaintAreaView extends View implements View.OnTouchListener{
         return true;
     }
 
-    public RgbColor getColor() {
+    public CmykColor getColor() {
         int rgb = currentLine.getPaint().getColor();
-        return new RgbColor(Color.red(rgb), Color.green(rgb), Color.blue(rgb));
+        return new CmykColor(Color.red(rgb), Color.green(rgb), Color.blue(rgb));
     }
 
     public void setPaintColor(CmykColor color) {
